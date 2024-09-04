@@ -22,6 +22,7 @@ const cuerpoTabla = tablaListaCompras.getElementsByTagName('tbody').item(0);
 const contadorProductos = document.getElementById('contadorProductos');
 const productosTotal = document.getElementById('productosTotal');
 const precioTotal = document.getElementById('precioTotal');
+const fecha = document.getElementById('fecha')
 
 //Bandera, al ser true permite agregar los datos a la table 
 let isValid = true;
@@ -185,6 +186,8 @@ window.addEventListener('load',function(){
                         <td>${r.precio}</td>
                     </tr>`;
         cuerpoTabla.insertAdjacentHTML('beforeend',row)
-    })
+    });
+    let now = new Date();
+    fecha.innerText = now.getFullYear();
 })//window load
 
